@@ -28,6 +28,7 @@ echo $keys[1];
   </thead>
   <tbody>
     <?php
+    $tong = 0;
     for ($i = 0; $i < count($keys); $i++) {
       ?>
     <tr>
@@ -42,12 +43,13 @@ echo $keys[1];
       </td>
     </tr>
     <?php
+      $tong = $tong + $products[$keys[$i]]["price"];
     }
     ?>
     <tr>
       <td colspan="2">Tong</td>
       <td>
-        <?php echo $products["apple"]["price"] + $products["samsung"]["price"]; ?>
+        <?php echo $tong; ?>
       </td>
     </tr>
   </tbody>
