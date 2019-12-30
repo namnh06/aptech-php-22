@@ -6,6 +6,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\DB;
 
 class Controller extends BaseController
 {
@@ -14,5 +15,14 @@ class Controller extends BaseController
     function quetNha()
     {
         return view('welcome');
+    }
+
+    function layTatCaNguoiDung()
+    {
+        $users = DB::table('users')->get();
+        return view('users', [
+            'users' => $users,
+            'loiChao' => 'Hello World'
+        ]);
     }
 }

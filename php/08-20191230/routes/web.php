@@ -24,3 +24,5 @@ Route::get('users/{id}', function ($id) {
 });
 
 Route::get('/quet-nha', 'Controller@quetNha');
+
+Route::get('/users', 'Controller@layTatCaNguoiDung');
