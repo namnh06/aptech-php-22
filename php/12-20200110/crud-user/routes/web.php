@@ -19,3 +19,5 @@ Route::get('/users', 'UserController@index');
 Route::get('/users/create', 'UserController@create');
 Route::get('/users/{id}', 'UserController@show');
 Route::post('/users/store', 'UserController@store');
+Route::get('/users/{id}/edit', 'UserController@edit');
+Route::patch('/users/{id}', 'UserController@update');
