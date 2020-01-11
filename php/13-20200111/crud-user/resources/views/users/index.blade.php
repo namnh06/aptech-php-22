@@ -5,7 +5,7 @@
   </a>
   <a href="http://localhost:8000/users/{{$user->id}}/edit">Sửa</a>
   {{-- <a href="http://localhost:8000/users/{{$user->id}}/delete">Xóa</a> --}}
-  <form action="http://localhost:8000/users/{{$user->id}}/delete" method="POST">
+  <form action="{{route('users.destroy',$user->id)}}" method="POST">
     <input type="hidden" name="_token" value="{{csrf_token()}}">
     <input type="hidden" name="_method" value="DELETE">
     <button type="submit">Xoa</button>
